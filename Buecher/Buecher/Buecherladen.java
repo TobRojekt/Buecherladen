@@ -1063,7 +1063,7 @@ public class Buecherladen {
 
                 try {
                         FileWriter myWriter = new FileWriter(
-                                        "C:\\Users\\Tobia\\OneDrive\\Dokumente\\# Studium\\# 1. Semester\\Informatik\\Übungen\\07\\Buecher\\StoreItemlist.txt",
+                                        "Desktop\\StoreItemlist.txt",
                                         false);
 
                         myWriter.write(BooksInStock);
@@ -1109,11 +1109,11 @@ public class Buecherladen {
 
                 try {
                         File FileItemlist = new File(
-                                        "C:\\Users\\Tobia\\OneDrive\\Dokumente\\# Studium\\# 1. Semester\\Informatik\\Übungen\\07\\Buecher\\StoreItemlist.txt");
+                                        "Desktop\\StoreItemlist.txt");
 
                         /*
                          * try { FileWriter myWriter = new FileWriter(
-                         * "C:\\Users\\Tobia\\OneDrive\\Dokumente\\# Studium\\# 1. Semester\\Informatik\\Übungen\\07\\Buecher\\StoreItemlist.txt"
+                         * "Desktop\\StoreItemlist.txt"
                          * );
                          * 
                          * myWriter.write("0\n"); myWriter.write("0"); myWriter.close(); } catch
