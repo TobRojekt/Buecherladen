@@ -1,9 +1,6 @@
 package Buecher;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
 import java.util.Scanner;
@@ -284,9 +281,9 @@ public class Buecherladen {
                 isNewspaper = true;
 
                 if (newspaperListChoice < NewspapersInStock + 1) {
-                        System.out.println(
-                                        "\n\n\n" + String.format("%5s", zeitungen[newspaperListChoice - 1].getHerausgeber()
-                                                        + "\t" + zeitungen[newspaperListChoice - 1].getAuflage() + ":"));
+                        System.out.println("\n\n\n" + String.format("%5s",
+                                        zeitungen[newspaperListChoice - 1].getHerausgeber() + "\t"
+                                                        + zeitungen[newspaperListChoice - 1].getAuflage() + ":"));
                         System.out.println(String.format("%s",
                                         "------------------------------------------------------------\n")
                                         + String.format("%1s %7s", "1)", ">Informationen") + "\n"
@@ -370,7 +367,7 @@ public class Buecherladen {
                 newspaperInformationChoice = s.nextInt();
 
                 switch (newspaperInformationChoice) {
-                        case 1:    
+                        case 1:
                                 doQuantityUp();
                                 doNewspaperInformation();
                                 break;
@@ -393,20 +390,27 @@ public class Buecherladen {
                         q = s.nextInt();
                         if (q > 0) {
                                 System.out.println("\n"
-                                + String.format("%27s %15s", "",
-                                                "V o r r a t   u m   " + q + "   e r h ö h t .")
-                                + "\n" + String.format("%77s %17s", "", zeitungen[newspaperListChoice - 1].getVorrat())
-                                + "\n" + String.format("%77s %18s", "", q) + "\n"
-                                + String.format("%77s %19s", "", q + zeitungen[newspaperListChoice - 1].getVorrat())
-                                + "\n");
-                        } else if(q < 0) {
+                                                + String.format("%27s %15s", "",
+                                                                "V o r r a t   u m   " + q + "   e r h ö h t .")
+                                                + "\n"
+                                                + String.format("%77s %17s", "",
+                                                                zeitungen[newspaperListChoice - 1].getVorrat())
+                                                + "\n" + String.format("%77s %18s", "", q) + "\n"
+                                                + String.format("%77s %19s", "",
+                                                                q + zeitungen[newspaperListChoice - 1].getVorrat())
+                                                + "\n");
+                        } else if (q < 0) {
                                 System.out.println("\n"
-                                + String.format("%27s %15s", "",
-                                                "V o r r a t   u m   " + -q + "   v e r r i n g e r t .")
-                                + "\n" + String.format("%77s %17s", "", zeitungen[newspaperListChoice - 1].getVorrat())
-                                + "\n" + String.format("%77s %18s", "", q) + "\n"
-                                + String.format("%77s %19s", "", q + zeitungen[newspaperListChoice - 1].getVorrat())
-                                + "\n");  
+                                                + String.format("%27s %15s", "",
+                                                                "V o r r a t   u m   "
+                                                                                + -q + "   v e r r i n g e r t .")
+                                                + "\n"
+                                                + String.format("%77s %17s", "",
+                                                                zeitungen[newspaperListChoice - 1].getVorrat())
+                                                + "\n" + String.format("%77s %18s", "", q) + "\n"
+                                                + String.format("%77s %19s", "",
+                                                                q + zeitungen[newspaperListChoice - 1].getVorrat())
+                                                + "\n");
                         }
 
                         zeitungen[newspaperListChoice - 1].setVorrat(q);
@@ -415,22 +419,27 @@ public class Buecherladen {
                         q = s.nextInt();
                         if (q > 0) {
                                 System.out.println("\n"
-                                + String.format("%27s %15s", "",
-                                                "V o r r a t   u m   " + q + "   e r h ö h t .")
-                                + "\n"
-                                + String.format("%77s %17s", "", buecher[itemlistChoice - 1].getVorrat())
-                                + "\n" + String.format("%77s %18s", "", q) + "\n"
-                                + String.format("%77s %19s", "", q + buecher[itemlistChoice - 1].getVorrat())
-                                + "\n");
+                                                + String.format("%27s %15s", "",
+                                                                "V o r r a t   u m   " + q + "   e r h ö h t .")
+                                                + "\n"
+                                                + String.format("%77s %17s", "",
+                                                                buecher[itemlistChoice - 1].getVorrat())
+                                                + "\n" + String.format("%77s %18s", "", q) + "\n"
+                                                + String.format("%77s %19s", "",
+                                                                q + buecher[itemlistChoice - 1].getVorrat())
+                                                + "\n");
                         } else if (q < 0) {
                                 System.out.println("\n"
-                                + String.format("%27s %15s", "",
-                                                "V o r r a t   u m   " + -q + "   v e r r i n g e r t .")
-                                + "\n"
-                                + String.format("%77s %17s", "", buecher[itemlistChoice - 1].getVorrat())
-                                + "\n" + String.format("%77s %18s", "", q) + "\n"
-                                + String.format("%77s %19s", "", q + buecher[itemlistChoice - 1].getVorrat())
-                                + "\n");
+                                                + String.format("%27s %15s", "",
+                                                                "V o r r a t   u m   "
+                                                                                + -q + "   v e r r i n g e r t .")
+                                                + "\n"
+                                                + String.format("%77s %17s", "",
+                                                                buecher[itemlistChoice - 1].getVorrat())
+                                                + "\n" + String.format("%77s %18s", "", q) + "\n"
+                                                + String.format("%77s %19s", "",
+                                                                q + buecher[itemlistChoice - 1].getVorrat())
+                                                + "\n");
                         }
 
                         buecher[itemlistChoice - 1].setVorrat(q);
@@ -440,7 +449,7 @@ public class Buecherladen {
 
         private static void doQuantityDown() {
 
-                System.out. println(isBook + " " + isNewspaper);
+                System.out.println(isBook + " " + isNewspaper);
                 if (isBook == true) {
                         q = -1 * booksBought;
                         System.out.println("\n"
@@ -461,8 +470,8 @@ public class Buecherladen {
                                                                         + "   v e r r i n g e r t .")
                                         + "\n"
                                         + String.format("%77s %17s", "", zeitungen[newspaperListChoice - 1].getVorrat())
-                                        + "\n" + String.format("%77s %18s", "", q) + "\n"
-                                        + String.format("%77s %19s", "", q + zeitungen[newspaperListChoice - 1].getVorrat())
+                                        + "\n" + String.format("%77s %18s", "", q) + "\n" + String.format("%77s %19s",
+                                                        "", q + zeitungen[newspaperListChoice - 1].getVorrat())
                                         + "\n");
 
                         zeitungen[newspaperListChoice - 1].setVorrat(q);
@@ -495,7 +504,8 @@ public class Buecherladen {
 
         private static void doNewspaperKaufenMenu() {
 
-                System.out.println("\n\t\t" + tempQuantity + " mal " + zeitungen[newspaperListChoice - 1].getHerausgeber());
+                System.out.println("\n\t\t" + tempQuantity + " mal "
+                                + zeitungen[newspaperListChoice - 1].getHerausgeber());
                 System.out.println("\n" + String.format("%1s %7s", "1)", ">kaufen") + "\n"
                                 + String.format("%1s %7s", "2)", ">Anzahl bestimmen") + "\n"
                                 + String.format("%1s %7s", "3)", ">zurück zur Auswahl") + "\n");
@@ -545,10 +555,11 @@ public class Buecherladen {
 
         private static void doNewspaperKaufenConfirm() {
 
-                System.out.println("\n\t\t" + tempQuantity + " mal " + zeitungen[newspaperListChoice - 1].getHerausgeber() + ", "
-                                + zeitungen[newspaperListChoice - 1].getAuflage() + " kaufen?\n"
-                                + String.format("%1s %4s", "1)", ">Ja") + "\n" + String.format("%1s %4s", "2)", ">Nein")
-                                + "\n");
+                System.out.println(
+                                "\n\t\t" + tempQuantity + " mal " + zeitungen[newspaperListChoice - 1].getHerausgeber()
+                                                + ", " + zeitungen[newspaperListChoice - 1].getAuflage() + " kaufen?\n"
+                                                + String.format("%1s %4s", "1)", ">Ja") + "\n"
+                                                + String.format("%1s %4s", "2)", ">Nein") + "\n");
                 newspaperKaufenConfirmChoice = s.nextInt();
 
                 switch (newspaperKaufenConfirmChoice) {
@@ -603,13 +614,20 @@ public class Buecherladen {
                         zeitungen[i] = new Zeitung();
                         System.out.println(String.format("%55s",
                                         "Zeitung " + (i + 1) + " von " + (NewspapersInStock) + " geladen."));
-                        zeitungen[i].setType((datalist.get(Integer.parseInt(datalist.get(0)) * ParameterB + 2 + 0 + (i * ParameterZ))));
-                        zeitungen[i].setHerausgeber((datalist.get(Integer.parseInt(datalist.get(0)) * ParameterB + 2 + 1 + (i * ParameterZ))));
-                        zeitungen[i].setAuflage((datalist.get(Integer.parseInt(datalist.get(0)) * ParameterB + 2 + 2 + (i * ParameterZ))));
-                        zeitungen[i].setPreis(Double.parseDouble(datalist.get(Integer.parseInt(datalist.get(0)) * ParameterB + 2 + 3 + (i * ParameterZ))));
-                        zeitungen[i].setVorrat(Integer.parseInt(datalist.get(Integer.parseInt(datalist.get(0)) * ParameterB + 2 + 4 + (i * ParameterZ))));
-                        zeitungen[i].setDateTime((datalist.get(Integer.parseInt(datalist.get(0)) * ParameterB + 2 + 5 + (i * ParameterZ))));
-                        zeitungen[i].setParameter(Integer.parseInt(datalist.get(Integer.parseInt(datalist.get(0)) * ParameterB + 2 + 6 + (i * ParameterZ))));
+                        zeitungen[i].setType((datalist.get(
+                                        Integer.parseInt(datalist.get(0)) * ParameterB + 2 + 0 + (i * ParameterZ))));
+                        zeitungen[i].setHerausgeber((datalist.get(
+                                        Integer.parseInt(datalist.get(0)) * ParameterB + 2 + 1 + (i * ParameterZ))));
+                        zeitungen[i].setAuflage((datalist.get(
+                                        Integer.parseInt(datalist.get(0)) * ParameterB + 2 + 2 + (i * ParameterZ))));
+                        zeitungen[i].setPreis(Double.parseDouble(datalist.get(
+                                        Integer.parseInt(datalist.get(0)) * ParameterB + 2 + 3 + (i * ParameterZ))));
+                        zeitungen[i].setVorrat(Integer.parseInt(datalist.get(
+                                        Integer.parseInt(datalist.get(0)) * ParameterB + 2 + 4 + (i * ParameterZ))));
+                        zeitungen[i].setDateTime((datalist.get(
+                                        Integer.parseInt(datalist.get(0)) * ParameterB + 2 + 5 + (i * ParameterZ))));
+                        zeitungen[i].setParameter(Integer.parseInt(datalist.get(
+                                        Integer.parseInt(datalist.get(0)) * ParameterB + 2 + 6 + (i * ParameterZ))));
 
                         ItemsInStock = BooksInStock + NewspapersInStock;
                 }
@@ -711,11 +729,12 @@ public class Buecherladen {
                 try {
                         File FileItemlist = new File("C:\\StoreItemlist.txt");
                         Scanner FileReader = new Scanner(FileItemlist);
-                /*        if (Files.readAllLines(Paths.get("StoreItemlist.txt")).get(0).equals("0") || Files
-                                        .readAllLines(Paths.get("StoreItemlist.txt"))
-                                        .get(Integer.parseInt(datalist
-                                                        .get(Integer.parseInt(datalist.get(0)) * ParameterB + 1)))
-                                        .equals("0")) {*/
+                        /*
+                         * if (Files.readAllLines(Paths.get("StoreItemlist.txt")).get(0).equals("0") ||
+                         * Files .readAllLines(Paths.get("StoreItemlist.txt"))
+                         * .get(Integer.parseInt(datalist .get(Integer.parseInt(datalist.get(0)) *
+                         * ParameterB + 1))) .equals("0")) {
+                         */
                         if (BooksInStock == 0 && NewspapersInStock == 0) {
                                 FileWriter myWriter = new FileWriter("C:\\StoreItemlist.txt", false);
 
@@ -789,12 +808,6 @@ public class Buecherladen {
                 try {
                         File FileItemlist = new File("C:\\StoreItemlist.txt");
 
-                        /*
-                         * try { FileWriter myWriter = new FileWriter( "C:\\StoreItemlist.txt" );
-                         * 
-                         * myWriter.write("0\n"); myWriter.write("0"); myWriter.close(); } catch
-                         * (IOException e) { System.out.println("Es ist ein Fehler aufgetreten."); }
-                         */
                         Scanner FileReader = new Scanner(FileItemlist);
 
                         while (FileReader.hasNextLine()) {
